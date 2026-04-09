@@ -10,17 +10,18 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center">
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-      {data.map((item) => (
-        <ActivityCard
-          //   key={item.id}
-          title={item.title}
-          current={item.timeframes[timeframe].current}
-          previous={item.timeframes[timeframe].previous}
-          timeframe={timeframe}
-        />
-      ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {" "}
+        <ProfileCard timeframe={timeframe} setTimeframe={setTimeframe} />
+        {data.map((item) => (
+          <ActivityCard
+            //   key={item.id}
+            title={item.title}
+            current={item.timeframes[timeframe].current}
+            previous={item.timeframes[timeframe].previous}
+            timeframe={timeframe}
+          />
+        ))}
       </div>
     </div>
   );
